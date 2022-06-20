@@ -2,20 +2,14 @@ class ArticlesController < ApplicationController
     def index
         @time = Time.now
         @articles = Article.all
-
-        console
     end
 
     def show
         @article = Article.find(params[:id])
-
-        console
     end
 
     def new
         @article = Article.new
-
-        console
     end
 
     def create
@@ -27,9 +21,18 @@ class ArticlesController < ApplicationController
             render :new
         end
     end
-
-    private
-    def article_params
-        params.require(:article).permit(:title, :body, :importance)
+    
+    def edit
+        @article = Article.find(params[:id])
     end
-end
+
+    def update
+        @article = Article.find(params[:id])
+        
+        if @article.update(article_params)
+            redirect_to articles_path
+        else
+            render :edit
+        end
+    end
+
