@@ -10,8 +10,8 @@
 
   Article.create([
     { 
-        title: "This is title #{i}", 
-        body: 'Culpa ea do id reprehenderit fugiat ut ex. Ipsum qui exercitation aliquip amet qui eiusmod laborum. In mollit cillum do nulla labore id eu.', 
+        title: Faker::TvShows::Buffy.episode, 
+        body: Faker::TvShows::Simpsons.quote, 
         importance: rand(1..10) 
     }
   ])
