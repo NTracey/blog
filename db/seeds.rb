@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  articles = Article.create([
+10.times do |i|
+
+  Article.create([
     { 
-        title: 'Star Wars', 
+        title: "This is title #{i}", 
         body: 'Culpa ea do id reprehenderit fugiat ut ex. Ipsum qui exercitation aliquip amet qui eiusmod laborum. In mollit cillum do nulla labore id eu.', 
-        importance: 6 
-    }, 
-    { 
-        title: 'Star Trek', 
-        body: 'Ad velit fugiat officia consectetur sit irure duis sit. Mollit anim cupidatat duis id incididunt esse dolor ea. Ipsum non ad laborum enim voluptate eiusmod.', 
-        importance: 2 
-    }])
+        importance: rand(1..10) 
+    }
+  ])
+
+end
