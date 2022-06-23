@@ -6,5 +6,6 @@ class Article < ApplicationRecord
     end
 
     def previous
+        Article.where("id < :id", id: id).last
     end
 end
